@@ -1,0 +1,822 @@
+{
+  "projectInfo": {
+    "applicationType": "default",
+    "defaultPackage": "io.hashimati",
+    "testFramework": "junit",
+    "sourceLanguage": "java",
+    "buildTool": "gradle",
+    "features": [
+      "annotation-api",
+      "app-name",
+      "gradle",
+      "http-client",
+      "jackson-databind",
+      "java",
+      "java-application",
+      "junit",
+      "logback",
+      "micronaut-build",
+      "netty-server",
+      "readme",
+      "shade",
+      "yaml",
+      "data-mongodb",
+      "mongo-sync",
+      "testcontainers",
+      "nats",
+      "management",
+      "micrometer",
+      "tracing-jaeger",
+      "graphql",
+      "openapi",
+      "lombok"
+    ]
+  },
+  "liquibaseSequence": 0,
+  "appName": "DecisionEngine",
+  "databaseName": "DecisionEngine",
+  "databaseType": "MongoDB",
+  "dataBackendRun": "data-mongodb",
+  "messaging": "nats",
+  "graphQLIntegrationLib": "graphql-java-tools",
+  "jaxRsAnnotation": false,
+  "micronautAnnotation": false,
+  "springBootAnnotation": false,
+  "port": 3030,
+  "graphQlSupport": true,
+  "reactiveFramework": "reactor",
+  "nonBlocking": false,
+  "micrometer": true,
+  "influx": false,
+  "prometheus": false,
+  "graphite": false,
+  "statsd": false,
+  "caffeine": false,
+  "gorm": false,
+  "securityEnable": false,
+  "securityStrategy": "none",
+  "tracingFramework": "tracing-jaeger",
+  "tracingEnabled": true,
+  "mnData": true,
+  "javaVersion": "11",
+  "entities": [
+    {
+      "name": "Rule",
+      "idType": "String",
+      "entityPackage": "io.hashimati.domains",
+      "repoPackage": "io.hashimati.repositories",
+      "servicePackage": "io.hashimati.services",
+      "restPackage": "io.hashimati.controllers",
+      "clientPackage": "io.hashimati.clients",
+      "microstreamPackage": "io.hashimati.microstream",
+      "graphqlpackage": "io.hashimati.graphqls",
+      "functionPackage": "io.hashimati.function",
+      "lambdaPackage": "io.hashimati.function.aws",
+      "oraclePackage": "io.hashimati.function.oracle",
+      "azurePackage": "io.hashimati.function.azure",
+      "googlePackage": "io.hashimati.function.google",
+      "reactiveFramework": "reactor",
+      "databaseType": "MongoDB",
+      "collectionName": "rules",
+      "databaseName": "DecisionEngine",
+      "gorm": false,
+      "frameworkType": "data-mongodb",
+      "microstreamChannelCount": 4,
+      "jaxRs": false,
+      "spring": false,
+      "micronaut": false,
+      "pageable": false,
+      "attributes": [
+        {
+          "name": "id",
+          "type": "String",
+          "premetive": true,
+          "enumuration": false,
+          "array": false,
+          "jdbc": false,
+          "jpa": false,
+          "findByMethod": false,
+          "findAllMethod": false
+        },
+        {
+          "name": "expression",
+          "type": "String",
+          "premetive": true,
+          "enumuration": false,
+          "array": false,
+          "jdbc": false,
+          "jpa": false,
+          "findByMethod": false,
+          "findAllMethod": false
+        },
+        {
+          "name": "variable",
+          "type": "String",
+          "premetive": true,
+          "enumuration": false,
+          "array": false,
+          "jdbc": false,
+          "jpa": false,
+          "findByMethod": false,
+          "findAllMethod": false
+        },
+        {
+          "name": "operator",
+          "type": "String",
+          "premetive": true,
+          "enumuration": false,
+          "array": false,
+          "jdbc": false,
+          "jpa": false,
+          "findByMethod": false,
+          "findAllMethod": false
+        },
+        {
+          "name": "value",
+          "type": "String",
+          "premetive": true,
+          "enumuration": false,
+          "array": false,
+          "jdbc": false,
+          "jpa": false,
+          "findByMethod": false,
+          "findAllMethod": false
+        },
+        {
+          "name": "name",
+          "type": "String",
+          "premetive": true,
+          "enumuration": false,
+          "array": false,
+          "jdbc": false,
+          "jpa": false,
+          "findByMethod": false,
+          "findAllMethod": false
+        }
+      ],
+      "liquibaseSequence": 0,
+      "nonBlocking": false,
+      "mnData": true,
+      "cached": false,
+      "micrometer": true,
+      "tracingEnabled": true,
+      "securityEnabled": false,
+      "securityStrategy": "none",
+      "noEndpoints": false,
+      "javaVersion": "11",
+      "javaRecord": false,
+      "updateByMethods": {},
+      "urls": [
+        {
+          "url": "/api/v1/rule/get",
+          "method": "GET",
+          "roles": []
+        },
+        {
+          "url": "/api/v1/rule/findAll",
+          "method": "GET",
+          "roles": []
+        },
+        {
+          "url": "/api/v1/rule/save",
+          "method": "POST",
+          "roles": []
+        },
+        {
+          "url": "/api/v1/rule/update",
+          "method": "PUT",
+          "roles": []
+        },
+        {
+          "url": "/api/v1/rule/delete/{id}",
+          "method": "DELETE",
+          "roles": []
+        }
+      ],
+      "graphQl": false,
+      "lombok": true
+    },
+    {
+      "name": "Sequence",
+      "idType": "String",
+      "entityPackage": "io.hashimati.domains",
+      "repoPackage": "io.hashimati.repositories",
+      "servicePackage": "io.hashimati.services",
+      "restPackage": "io.hashimati.controllers",
+      "clientPackage": "io.hashimati.clients",
+      "microstreamPackage": "io.hashimati.microstream",
+      "graphqlpackage": "io.hashimati.graphqls",
+      "functionPackage": "io.hashimati.function",
+      "lambdaPackage": "io.hashimati.function.aws",
+      "oraclePackage": "io.hashimati.function.oracle",
+      "azurePackage": "io.hashimati.function.azure",
+      "googlePackage": "io.hashimati.function.google",
+      "reactiveFramework": "reactor",
+      "databaseType": "MongoDB",
+      "collectionName": "sequences",
+      "databaseName": "DecisionEngine",
+      "gorm": false,
+      "frameworkType": "data-mongodb",
+      "microstreamChannelCount": 4,
+      "jaxRs": false,
+      "spring": false,
+      "micronaut": false,
+      "pageable": false,
+      "attributes": [
+        {
+          "name": "id",
+          "type": "String",
+          "premetive": true,
+          "enumuration": false,
+          "array": false,
+          "jdbc": false,
+          "jpa": false,
+          "findByMethod": false,
+          "findAllMethod": false
+        },
+        {
+          "name": "name",
+          "type": "String",
+          "premetive": true,
+          "enumuration": false,
+          "array": false,
+          "jdbc": false,
+          "jpa": false,
+          "findByMethod": true,
+          "findAllMethod": false
+        },
+        {
+          "name": "counter",
+          "type": "String",
+          "premetive": true,
+          "enumuration": false,
+          "array": false,
+          "jdbc": false,
+          "jpa": false,
+          "findByMethod": false,
+          "findAllMethod": false
+        }
+      ],
+      "liquibaseSequence": 0,
+      "nonBlocking": false,
+      "mnData": true,
+      "cached": false,
+      "micrometer": true,
+      "tracingEnabled": true,
+      "securityEnabled": false,
+      "securityStrategy": "none",
+      "noEndpoints": false,
+      "javaVersion": "11",
+      "javaRecord": false,
+      "updateByMethods": {
+        "name": [
+          "name",
+          "counter"
+        ]
+      },
+      "urls": [
+        {
+          "url": "/api/v1/sequence/get",
+          "method": "GET",
+          "roles": []
+        },
+        {
+          "url": "/api/v1/sequence/findAll",
+          "method": "GET",
+          "roles": []
+        },
+        {
+          "url": "/api/v1/sequence/save",
+          "method": "POST",
+          "roles": []
+        },
+        {
+          "url": "/api/v1/sequence/update",
+          "method": "PUT",
+          "roles": []
+        },
+        {
+          "url": "/api/v1/sequence/delete/{id}",
+          "method": "DELETE",
+          "roles": []
+        },
+        {
+          "url": "/api/v1/sequence/findByName",
+          "method": "DELETE",
+          "roles": []
+        },
+        {
+          "url": "/api/v1/sequence/updateByName",
+          "method": "DELETE",
+          "roles": []
+        }
+      ],
+      "graphQl": false,
+      "lombok": true
+    },
+    {
+      "name": "DecisionsCard",
+      "idType": "String",
+      "entityPackage": "io.hashimati.domains",
+      "repoPackage": "io.hashimati.repositories",
+      "servicePackage": "io.hashimati.services",
+      "restPackage": "io.hashimati.controllers",
+      "clientPackage": "io.hashimati.clients",
+      "microstreamPackage": "io.hashimati.microstream",
+      "graphqlpackage": "io.hashimati.graphqls",
+      "functionPackage": "io.hashimati.function",
+      "lambdaPackage": "io.hashimati.function.aws",
+      "oraclePackage": "io.hashimati.function.oracle",
+      "azurePackage": "io.hashimati.function.azure",
+      "googlePackage": "io.hashimati.function.google",
+      "reactiveFramework": "reactor",
+      "databaseType": "MongoDB",
+      "collectionName": "decisionscards",
+      "databaseName": "DecisionEngine",
+      "gorm": false,
+      "frameworkType": "data-mongodb",
+      "microstreamChannelCount": 4,
+      "jaxRs": false,
+      "spring": false,
+      "micronaut": false,
+      "pageable": false,
+      "attributes": [
+        {
+          "name": "id",
+          "type": "String",
+          "premetive": true,
+          "enumuration": false,
+          "array": false,
+          "jdbc": false,
+          "jpa": false,
+          "findByMethod": false,
+          "findAllMethod": false
+        },
+        {
+          "name": "name",
+          "type": "String",
+          "premetive": true,
+          "enumuration": false,
+          "array": false,
+          "jdbc": false,
+          "jpa": false,
+          "findByMethod": true,
+          "findAllMethod": false
+        },
+        {
+          "name": "context",
+          "type": "String",
+          "premetive": true,
+          "enumuration": false,
+          "array": false,
+          "jdbc": false,
+          "jpa": false,
+          "findByMethod": false,
+          "findAllMethod": true
+        }
+      ],
+      "liquibaseSequence": 0,
+      "nonBlocking": false,
+      "mnData": true,
+      "cached": false,
+      "micrometer": true,
+      "tracingEnabled": true,
+      "securityEnabled": false,
+      "securityStrategy": "none",
+      "noEndpoints": false,
+      "javaVersion": "11",
+      "javaRecord": false,
+      "updateByMethods": {},
+      "urls": [
+        {
+          "url": "/api/v1/decisionsCard/get",
+          "method": "GET",
+          "roles": []
+        },
+        {
+          "url": "/api/v1/decisionsCard/findAll",
+          "method": "GET",
+          "roles": []
+        },
+        {
+          "url": "/api/v1/decisionsCard/save",
+          "method": "POST",
+          "roles": []
+        },
+        {
+          "url": "/api/v1/decisionsCard/update",
+          "method": "PUT",
+          "roles": []
+        },
+        {
+          "url": "/api/v1/decisionsCard/delete/{id}",
+          "method": "DELETE",
+          "roles": []
+        },
+        {
+          "url": "/api/v1/decisionsCard/findByName",
+          "method": "DELETE",
+          "roles": []
+        },
+        {
+          "url": "/api/v1/decisionsCard/findAllByContext",
+          "method": "DELETE",
+          "roles": []
+        }
+      ],
+      "graphQl": false,
+      "lombok": true
+    },
+    {
+      "name": "Decision",
+      "idType": "String",
+      "entityPackage": "io.hashimati.domains",
+      "repoPackage": "io.hashimati.repositories",
+      "servicePackage": "io.hashimati.services",
+      "restPackage": "io.hashimati.controllers",
+      "clientPackage": "io.hashimati.clients",
+      "microstreamPackage": "io.hashimati.microstream",
+      "graphqlpackage": "io.hashimati.graphqls",
+      "functionPackage": "io.hashimati.function",
+      "lambdaPackage": "io.hashimati.function.aws",
+      "oraclePackage": "io.hashimati.function.oracle",
+      "azurePackage": "io.hashimati.function.azure",
+      "googlePackage": "io.hashimati.function.google",
+      "reactiveFramework": "reactor",
+      "databaseType": "MongoDB",
+      "collectionName": "decisions",
+      "databaseName": "DecisionEngine",
+      "gorm": false,
+      "frameworkType": "data-mongodb",
+      "microstreamChannelCount": 4,
+      "jaxRs": false,
+      "spring": false,
+      "micronaut": false,
+      "pageable": false,
+      "attributes": [
+        {
+          "name": "id",
+          "type": "String",
+          "premetive": true,
+          "enumuration": false,
+          "array": false,
+          "jdbc": false,
+          "jpa": false,
+          "findByMethod": false,
+          "findAllMethod": false
+        },
+        {
+          "name": "name",
+          "type": "String",
+          "premetive": true,
+          "enumuration": false,
+          "array": false,
+          "jdbc": false,
+          "jpa": false,
+          "findByMethod": true,
+          "findAllMethod": false
+        },
+        {
+          "name": "context",
+          "type": "String",
+          "premetive": true,
+          "enumuration": false,
+          "array": false,
+          "jdbc": false,
+          "jpa": false,
+          "findByMethod": false,
+          "findAllMethod": true
+        }
+      ],
+      "liquibaseSequence": 0,
+      "nonBlocking": false,
+      "mnData": true,
+      "cached": false,
+      "micrometer": true,
+      "tracingEnabled": true,
+      "securityEnabled": false,
+      "securityStrategy": "none",
+      "noEndpoints": false,
+      "javaVersion": "11",
+      "javaRecord": false,
+      "updateByMethods": {
+        "name": [
+          "name"
+        ]
+      },
+      "urls": [
+        {
+          "url": "/api/v1/decision/get",
+          "method": "GET",
+          "roles": []
+        },
+        {
+          "url": "/api/v1/decision/findAll",
+          "method": "GET",
+          "roles": []
+        },
+        {
+          "url": "/api/v1/decision/save",
+          "method": "POST",
+          "roles": []
+        },
+        {
+          "url": "/api/v1/decision/update",
+          "method": "PUT",
+          "roles": []
+        },
+        {
+          "url": "/api/v1/decision/delete/{id}",
+          "method": "DELETE",
+          "roles": []
+        },
+        {
+          "url": "/api/v1/decision/findByName",
+          "method": "DELETE",
+          "roles": []
+        },
+        {
+          "url": "/api/v1/decision/findAllByContext",
+          "method": "DELETE",
+          "roles": []
+        },
+        {
+          "url": "/api/v1/decision/updateByName",
+          "method": "DELETE",
+          "roles": []
+        }
+      ],
+      "graphQl": false,
+      "lombok": true
+    },
+    {
+      "name": "Varaible",
+      "idType": "String",
+      "entityPackage": "io.hashimati.domains",
+      "repoPackage": "io.hashimati.repositories",
+      "servicePackage": "io.hashimati.services",
+      "restPackage": "io.hashimati.controllers",
+      "clientPackage": "io.hashimati.clients",
+      "microstreamPackage": "io.hashimati.microstream",
+      "graphqlpackage": "io.hashimati.graphqls",
+      "functionPackage": "io.hashimati.function",
+      "lambdaPackage": "io.hashimati.function.aws",
+      "oraclePackage": "io.hashimati.function.oracle",
+      "azurePackage": "io.hashimati.function.azure",
+      "googlePackage": "io.hashimati.function.google",
+      "reactiveFramework": "reactor",
+      "databaseType": "MongoDB",
+      "collectionName": "varaibles",
+      "databaseName": "DecisionEngine",
+      "gorm": false,
+      "frameworkType": "data-mongodb",
+      "microstreamChannelCount": 4,
+      "jaxRs": false,
+      "spring": false,
+      "micronaut": false,
+      "pageable": false,
+      "attributes": [
+        {
+          "name": "id",
+          "type": "String",
+          "premetive": true,
+          "enumuration": false,
+          "array": false,
+          "jdbc": false,
+          "jpa": false,
+          "findByMethod": false,
+          "findAllMethod": false
+        },
+        {
+          "name": "name",
+          "type": "String",
+          "premetive": true,
+          "enumuration": false,
+          "array": false,
+          "jdbc": false,
+          "jpa": false,
+          "findByMethod": true,
+          "findAllMethod": false
+        },
+        {
+          "name": "type",
+          "type": "String",
+          "premetive": true,
+          "enumuration": false,
+          "array": false,
+          "jdbc": false,
+          "jpa": false,
+          "findByMethod": false,
+          "findAllMethod": false
+        },
+        {
+          "name": "description",
+          "type": "String",
+          "premetive": true,
+          "enumuration": false,
+          "array": false,
+          "jdbc": false,
+          "jpa": false,
+          "findByMethod": false,
+          "findAllMethod": false
+        }
+      ],
+      "liquibaseSequence": 0,
+      "nonBlocking": false,
+      "mnData": true,
+      "cached": false,
+      "micrometer": true,
+      "tracingEnabled": true,
+      "securityEnabled": false,
+      "securityStrategy": "none",
+      "noEndpoints": false,
+      "javaVersion": "11",
+      "javaRecord": false,
+      "updateByMethods": {},
+      "urls": [
+        {
+          "url": "/api/v1/varaible/get",
+          "method": "GET",
+          "roles": []
+        },
+        {
+          "url": "/api/v1/varaible/findAll",
+          "method": "GET",
+          "roles": []
+        },
+        {
+          "url": "/api/v1/varaible/save",
+          "method": "POST",
+          "roles": []
+        },
+        {
+          "url": "/api/v1/varaible/update",
+          "method": "PUT",
+          "roles": []
+        },
+        {
+          "url": "/api/v1/varaible/delete/{id}",
+          "method": "DELETE",
+          "roles": []
+        },
+        {
+          "url": "/api/v1/varaible/findByName",
+          "method": "DELETE",
+          "roles": []
+        }
+      ],
+      "graphQl": false,
+      "lombok": true
+    },
+    {
+      "name": "Context",
+      "idType": "String",
+      "entityPackage": "io.hashimati.domains",
+      "repoPackage": "io.hashimati.repositories",
+      "servicePackage": "io.hashimati.services",
+      "restPackage": "io.hashimati.controllers",
+      "clientPackage": "io.hashimati.clients",
+      "microstreamPackage": "io.hashimati.microstream",
+      "graphqlpackage": "io.hashimati.graphqls",
+      "functionPackage": "io.hashimati.function",
+      "lambdaPackage": "io.hashimati.function.aws",
+      "oraclePackage": "io.hashimati.function.oracle",
+      "azurePackage": "io.hashimati.function.azure",
+      "googlePackage": "io.hashimati.function.google",
+      "reactiveFramework": "reactor",
+      "databaseType": "MongoDB",
+      "collectionName": "contexts",
+      "databaseName": "DecisionEngine",
+      "gorm": false,
+      "frameworkType": "data-mongodb",
+      "microstreamChannelCount": 4,
+      "jaxRs": false,
+      "spring": false,
+      "micronaut": false,
+      "pageable": false,
+      "attributes": [
+        {
+          "name": "id",
+          "type": "String",
+          "premetive": true,
+          "enumuration": false,
+          "array": false,
+          "jdbc": false,
+          "jpa": false,
+          "findByMethod": false,
+          "findAllMethod": false
+        },
+        {
+          "name": "name",
+          "type": "String",
+          "premetive": true,
+          "enumuration": false,
+          "array": false,
+          "jdbc": false,
+          "jpa": false,
+          "findByMethod": true,
+          "findAllMethod": false
+        },
+        {
+          "name": "description ",
+          "type": "String",
+          "premetive": true,
+          "enumuration": false,
+          "array": false,
+          "jdbc": false,
+          "jpa": false,
+          "findByMethod": false,
+          "findAllMethod": false
+        }
+      ],
+      "liquibaseSequence": 0,
+      "nonBlocking": false,
+      "mnData": true,
+      "cached": false,
+      "micrometer": true,
+      "tracingEnabled": true,
+      "securityEnabled": false,
+      "securityStrategy": "none",
+      "noEndpoints": false,
+      "javaVersion": "11",
+      "javaRecord": false,
+      "updateByMethods": {
+        "name": [
+          "name",
+          "description "
+        ]
+      },
+      "urls": [
+        {
+          "url": "/api/v1/context/get",
+          "method": "GET",
+          "roles": []
+        },
+        {
+          "url": "/api/v1/context/findAll",
+          "method": "GET",
+          "roles": []
+        },
+        {
+          "url": "/api/v1/context/save",
+          "method": "POST",
+          "roles": []
+        },
+        {
+          "url": "/api/v1/context/update",
+          "method": "PUT",
+          "roles": []
+        },
+        {
+          "url": "/api/v1/context/delete/{id}",
+          "method": "DELETE",
+          "roles": []
+        },
+        {
+          "url": "/api/v1/context/findByName",
+          "method": "DELETE",
+          "roles": []
+        },
+        {
+          "url": "/api/v1/context/updateByName",
+          "method": "DELETE",
+          "roles": []
+        }
+      ],
+      "graphQl": false,
+      "lombok": true
+    }
+  ],
+  "relations": [],
+  "enums": [],
+  "configured": true,
+  "supportFileService": false,
+  "securityRoles": [],
+  "urls": [
+    {
+      "scope": "/OpenAPI",
+      "url": "/swagger/views/swagger-ui/index.html",
+      "method": "GET",
+      "roles": []
+    },
+    {
+      "scope": "/GraphQL",
+      "url": "/graphql",
+      "method": "POST",
+      "roles": []
+    },
+    {
+      "scope": "/OpenAPI",
+      "url": "/swagger/views/rapidoc/index.html",
+      "method": "GET",
+      "roles": []
+    },
+    {
+      "scope": "/GraphQL",
+      "url": "/graphiql",
+      "method": "GET",
+      "roles": []
+    }
+  ],
+  "lombok": true
+}

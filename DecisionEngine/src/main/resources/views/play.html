@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<div class="row g-3">
+  <div class="col-sm-12">
+    <h3>Context</h3>
+  </div>
+  <div class="col-sm-10">
+    <input type="text" class="form-control" placeholder="search" aria-label="search">
+  </div>
+
+  <div class="col-sm">
+    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#contextModal">Add</button>
+
+  </div>
+  <div class="col-sm">
+    <button class="btn btn-primary" v-on:click="foo">Load</button>
+
+  </div>
+  <div class="col-12">
+    <table class="table table-striped table-hover">
+      <thead>
+      <tr>
+        <th scope="col">
+          name
+        </th>
+        <th scope="col">
+          description
+        </th>
+        <th scope="col">
+          status
+        </th>
+        <th scope="col">
+          Action
+        </th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr v-for="x in contextList">
+        <th scope="row">
+          {{x.name}}
+        </th>
+        <th scope="row">
+          {{x.description}}
+        </th>
+        <th scope="row">
+          {{x.status}}
+        </th>
+        <th>
+          <button class="btn-primary btn btn-secondary" v-on:click="showContexts(x.id)">
+            Show
+          </button>
+        </th>
+
+      </tr>
+
+      </tbody>
+    </table>
+  </div>
+
+  <div class="modal fade" id="contextModal" tabindex="-1" aria-labelledby="employerModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Create A Context</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form class="row g-3">
+            <div class="col-md-12">
+              <label for="contextName" class="form-label">Name</label>
+              <input type="text" class="form-control" id="contextName" v-model="contextName"/>
+            </div>
+            <div class="col-md-12">
+              <label for="contextDescription" class="form-label">Description</label>
+              <textarea type="text" rows="6" class="form-control" id="contextDescription" v-model="contextDescription"/>
+            </div>
+
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" v-on:click="registerEmployer" data-bs-dismiss="modal">Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
