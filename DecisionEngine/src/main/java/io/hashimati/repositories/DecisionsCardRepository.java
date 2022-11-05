@@ -17,6 +17,8 @@ public interface DecisionsCardRepository extends CrudRepository<DecisionsCard, S
 
     public Optional<DecisionsCard> findByName(String name);
 
+    public Optional<DecisionsCard> findByIdAndContext(String id, String context);
+
     public Iterable<DecisionsCard> findAllByContext(String context);
 
 }

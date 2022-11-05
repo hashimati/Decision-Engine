@@ -1,8 +1,6 @@
 package io.hashimati.controllers;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import io.micronaut.http.MediaType;
-import io.micronaut.http.multipart.CompletedFileUpload;
+import io.hashimati.domains.DecisionsCardResult;
 import io.micronaut.core.annotation.NonNull;
 
 
@@ -30,6 +28,8 @@ import jakarta.inject.Inject;
 
 import io.hashimati.domains.DecisionsCard;
 import io.hashimati.services.DecisionsCardService;
+
+import java.util.HashMap;
 
 
 @Tag(name = "DecisionsCard")
@@ -159,7 +159,7 @@ public class DecisionsCardController {
 
     @NewSpan("DecisionsCard-service")
     @Timed(value = "io.hashimati.controllers.decisionsCardController.findAllByContext", percentiles = { 0.5, 0.95, 0.99 }, description = "Observing all service metric for finding a decisionsCard object by Context")
-    
+    @Version("1")
     @Get("/findAllByContext")
     @Operation(summary = "Getting all entity by Context",
        description = "A REST service, which retrieves a DecisionsCard objects by Context."
@@ -174,6 +174,24 @@ public class DecisionsCardController {
           return decisionsCardService.findAllByContext(query );
     }
 
+
+    @NewSpan("DecisionsCard-service")
+    @Timed(value = "io.hashimati.controllers.decisionsCardController.processingCard", percentiles = { 0.5, 0.95, 0.99 }, description = "Observing all service metric for finding a decisionsCard object by Context")
+    @Version("1")
+    @Post("/processingCard/{context}/{card}")
+    @Operation(summary = "Getting all entity by Context",
+            description = "A REST service, which processing a DecisionsCard objects."
+    )
+    @ApiResponse(
+            content = @Content(mediaType = "application/json")
+    )
+    @ApiResponse(responseCode = "400", description = "Invalid Id Supplied")
+    @ApiResponse(responseCode = "404", description = "DecisionsCard not found")
+    public DecisionsCardResult processingCard(@PathVariable("context") String context,
+                                              @PathVariable("card") String card, HashMap<String, Object> parameters){
+        log.info("Finding all DecisionsCard By Context: {}", parameters);
+        return decisionsCardService.processDecisionCard(context, card, parameters );
+    }
 
 
 }

@@ -28,7 +28,7 @@ public class Decision{
     private String result;
     private Status status;
 //    private ArrayList<String> rules;
-
+    private String returnType;
     private String rule;
     private String decision;
    // private ArrayList<?> rules = new ArrayList<>();

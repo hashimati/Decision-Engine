@@ -16,7 +16,6 @@ import org.bson.types.ObjectId;
 public interface DecisionRepository extends CrudRepository<Decision, String> {
 
     public Optional<Decision> findByName(String name);
-
     public Iterable<Decision> findAllByContext(String context);
 
 

@@ -26,6 +26,9 @@ public class DecisionsCard{
     private String name;
 	private String context;
     private Status status;
+    private ArrayList<String> decisions = new ArrayList<String>();
+    private HashMap<String,?> result = new HashMap<>() ;
+
 
     @DateCreated private Date dateCreated;
     @DateUpdated private Date dateUpdated;
